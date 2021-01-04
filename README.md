@@ -1,0 +1,3 @@
+# Rapid
+
+A chat application.
