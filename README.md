@@ -1,3 +1,3 @@
 # Rapid
 
-A chat application.
+A chat application built using flutter.
