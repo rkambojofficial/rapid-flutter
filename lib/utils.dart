@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:intl/intl.dart';
 
-const serverKey = 'AAAAGMd0QwA:APA91bF_D4J29QPBFXh9wOkSPMPSA40uuoy_3HBdgqhQutp54YaEz-IHH5hHzD0swMPvRNhDNgb3mrItYC3BRvk83aGth0mY7oYL8QnQbVKKd-NLCk3IIREeCDFAm3RePYMw1sw_wM_p';
+const serverKey = '<YOUR_SERVER_KEY>';
 
 final emailFormat = RegExp(r'^[\w.-]{2,}[\w]@[\w]{2,}\.[\w]{2,7}$');
 
