@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rapid/data/repositories/message.dart';
+
+import '../repositories/message.dart';
 
 class Message {
   String id;

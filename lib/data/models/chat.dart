@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rapid/data/repositories/chat.dart';
-import 'package:rapid/utils.dart';
+
+import '../../utils.dart';
+import '../repositories/chat.dart';
 
 class Chat {
   String id;

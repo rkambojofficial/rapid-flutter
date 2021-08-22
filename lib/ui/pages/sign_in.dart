@@ -1,9 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:rapid/data/repositories/auth.dart';
-import 'package:rapid/data/repositories/firestore.dart';
-import 'package:rapid/utils.dart';
+
+import '../../data/repositories/auth.dart';
+import '../../data/repositories/firestore.dart';
+import '../../utils.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -68,10 +69,8 @@ class _SignInPageState extends State<SignInPage> {
                       SizedBox(
                         height: 16.0,
                       ),
-                      RaisedButton(
+                      ElevatedButton(
                         child: Text('SIGN IN'),
-                        color: Colors.deepOrange,
-                        textColor: Colors.white,
                         onPressed: () => _signIn(context),
                       ),
                     ],
@@ -130,7 +129,7 @@ class _SignInPageState extends State<SignInPage> {
         final snackBar = SnackBar(
           content: Text(message),
         );
-        Scaffold.of(context).showSnackBar(snackBar);
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
       }
     }
   }

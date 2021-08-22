@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:rapid/data/repositories/auth.dart';
-import 'package:rapid/ui/pages/home.dart';
-import 'package:rapid/ui/pages/sign_in.dart';
-import 'package:rapid/ui/pages/sign_up.dart';
-import 'package:rapid/ui/widgets/splash.dart';
+
+import '../../data/repositories/auth.dart';
+import '../pages/home.dart';
+import '../pages/sign_in.dart';
+import '../pages/sign_up.dart';
+import 'splash.dart';
 
 class AuthWidget extends StatelessWidget {
   @override
@@ -20,9 +21,12 @@ class AuthWidget extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
-                child: RaisedButton(
+                child: ElevatedButton(
                   child: Text('SIGN IN'),
-                  color: Colors.white,
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.deepOrange,
+                  ),
                   onPressed: () {
                     final route = MaterialPageRoute(
                       builder: (context) => SignInPage(),
@@ -35,9 +39,12 @@ class AuthWidget extends StatelessWidget {
                 width: 16.0,
               ),
               Expanded(
-                child: RaisedButton(
+                child: ElevatedButton(
                   child: Text('SIGN UP'),
-                  color: Colors.white,
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.deepOrange,
+                  ),
                   onPressed: () {
                     final route = MaterialPageRoute(
                       builder: (context) => SignUpPage(),

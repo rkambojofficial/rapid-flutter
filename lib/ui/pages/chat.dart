@@ -1,13 +1,14 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:rapid/data/blocs/home_bloc.dart';
-import 'package:rapid/data/models/chat.dart';
-import 'package:rapid/data/models/message.dart';
-import 'package:rapid/data/repositories/auth.dart';
-import 'package:rapid/data/repositories/firestore.dart';
-import 'package:rapid/data/repositories/message.dart';
-import 'package:rapid/ui/widgets/message_tile.dart';
-import 'package:rapid/utils.dart';
+
+import '../../data/blocs/home_bloc.dart';
+import '../../data/models/chat.dart';
+import '../../data/models/message.dart';
+import '../../data/repositories/auth.dart';
+import '../../data/repositories/firestore.dart';
+import '../../data/repositories/message.dart';
+import '../../utils.dart';
+import '../widgets/message_tile.dart';
 
 class ChatPage extends StatefulWidget {
   final Chat chat;
@@ -35,7 +36,6 @@ class _ChatPageState extends State<ChatPage> {
       ),
     ],
   );
-  String _token;
 
   Chat get _chat => widget.chat;
 
@@ -71,7 +71,6 @@ class _ChatPageState extends State<ChatPage> {
                   final value = snapshot.data.snapshot.value;
                   final bool online = value['online'];
                   final int lastSeenAt = value['lastSeenAt'];
-                  _token = value['token'];
                   if (online) {
                     return subtitle('Online');
                   } else {
@@ -264,11 +263,6 @@ class _ChatPageState extends State<ChatPage> {
       _messageController.clear();
       _homeBloc.getMessages(_chat.id);
       await doc.set(message.toUpdate());
-      await sendNotification(
-        token: _token,
-        title: _user.displayName,
-        body: 'Sent you a message',
-      );
     }
   }
 
@@ -330,10 +324,8 @@ class _ChatPageState extends State<ChatPage> {
             Navigator.of(context).pop();
           },
         ),
-        FlatButton(
+        TextButton(
           child: Text('OK'),
-          color: Colors.deepOrange,
-          textColor: Colors.white,
           onPressed: () async {
             final body = _changeController.text;
             if (body != message.body && body.trim().isNotEmpty) {

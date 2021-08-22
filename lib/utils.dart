@@ -1,10 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:intl/intl.dart';
-
-const serverKey = '<YOUR_SERVER_KEY>';
 
 final emailFormat = RegExp(r'^[\w.-]{2,}[\w]@[\w]{2,}\.[\w]{2,7}$');
 
@@ -35,7 +30,7 @@ void showSnackBar(BuildContext context, String message) {
   final snackBar = SnackBar(
     content: Text(message),
   );
-  Scaffold.of(context).showSnackBar(snackBar);
+  ScaffoldMessenger.of(context).showSnackBar(snackBar);
 }
 
 Future<void> showAlertDialog({
@@ -68,33 +63,6 @@ Future<void> showAlertDialog({
         actions: actions,
       );
     },
-  );
-}
-
-Future<Response> sendNotification({
-  @required String token,
-  @required String title,
-  @required String body,
-}) {
-  return post(
-    'https://fcm.googleapis.com/fcm/send',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'key=$serverKey',
-    },
-    body: jsonEncode(
-      <String, dynamic>{
-        'notification': {
-          'title': title,
-          'body': body,
-        },
-        'priority': 'high',
-        'data': {
-          'click_action': 'FLUTTER_NOTIFICATION_CLICK',
-        },
-        'to': token,
-      },
-    ),
   );
 }
 

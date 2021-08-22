@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rapid/data/models/chat.dart';
-import 'package:rapid/utils.dart';
+
+import '../../data/models/chat.dart';
+import '../../utils.dart';
 
 class ChatTileWidget extends StatelessWidget {
   final Chat chat;

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:rapid/data/blocs/home_bloc.dart';
-import 'package:rapid/data/models/chat.dart';
-import 'package:rapid/data/models/user.dart';
-import 'package:rapid/data/repositories/auth.dart';
-import 'package:rapid/data/repositories/chat.dart';
-import 'package:rapid/data/repositories/firestore.dart';
-import 'package:rapid/ui/pages/chat.dart';
-import 'package:rapid/utils.dart';
+
+import '../../data/blocs/home_bloc.dart';
+import '../../data/models/chat.dart';
+import '../../data/models/user.dart';
+import '../../data/repositories/auth.dart';
+import '../../data/repositories/chat.dart';
+import '../../data/repositories/firestore.dart';
+import '../../utils.dart';
+import 'chat.dart';
 
 class AddChatPage extends StatefulWidget {
   final HomeBloc homeBloc;
@@ -60,10 +61,8 @@ class _AddChatPageState extends State<AddChatPage> {
                       SizedBox(
                         height: 16.0,
                       ),
-                      RaisedButton(
+                      ElevatedButton(
                         child: Text('FIND USER'),
-                        color: Colors.deepOrange,
-                        textColor: Colors.white,
                         onPressed: () => _findUser(context),
                       ),
                       if (_user != null) ...[

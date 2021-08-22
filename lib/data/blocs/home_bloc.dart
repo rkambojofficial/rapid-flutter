@@ -2,14 +2,15 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:rapid/data/models/chat.dart';
-import 'package:rapid/data/models/message.dart';
-import 'package:rapid/data/repositories/auth.dart';
-import 'package:rapid/data/repositories/chat.dart';
-import 'package:rapid/data/repositories/firestore.dart';
-import 'package:rapid/data/repositories/message.dart';
-import 'package:rapid/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../utils.dart';
+import '../models/chat.dart';
+import '../models/message.dart';
+import '../repositories/auth.dart';
+import '../repositories/chat.dart';
+import '../repositories/firestore.dart';
+import '../repositories/message.dart';
 
 class HomeBloc {
   final _user = AuthRepository.currentUser;

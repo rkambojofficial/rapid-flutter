@@ -1,9 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:rapid/data/repositories/auth.dart';
-import 'package:rapid/data/repositories/firestore.dart';
-import 'package:rapid/utils.dart';
+
+import '../../data/repositories/auth.dart';
+import '../../data/repositories/firestore.dart';
+import '../../utils.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -84,10 +85,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       SizedBox(
                         height: 16.0,
                       ),
-                      RaisedButton(
+                      ElevatedButton(
                         child: Text('SIGN UP'),
-                        color: Colors.deepOrange,
-                        textColor: Colors.white,
                         onPressed: () => _signUp(context),
                       ),
                     ],

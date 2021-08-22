@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:rapid/data/blocs/home_bloc.dart';
-import 'package:rapid/data/models/chat.dart';
-import 'package:rapid/ui/pages/add_chat.dart';
-import 'package:rapid/ui/pages/chat.dart';
-import 'package:rapid/ui/widgets/chat_tile.dart';
+
+import '../../data/blocs/home_bloc.dart';
+import '../../data/models/chat.dart';
+import '../widgets/chat_tile.dart';
+import 'add_chat.dart';
+import 'chat.dart';
 
 class HomePage extends StatefulWidget {
   @override

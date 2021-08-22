@@ -1,5 +1,5 @@
-import 'package:rapid/data/database.dart';
-import 'package:rapid/data/models/chat.dart';
+import '../database.dart';
+import '../models/chat.dart';
 
 class ChatRepository {
   static Future<List<Chat>> getChats() async {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rapid/data/models/message.dart';
-import 'package:rapid/utils.dart';
+
+import '../../data/models/message.dart';
+import '../../utils.dart';
 
 class MessageTileWidget extends StatelessWidget {
   final Message message;
