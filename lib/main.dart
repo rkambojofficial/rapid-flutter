@@ -2,10 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'ui/widgets/auth.dart';
-import 'ui/widgets/splash.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(App());
 }
 
@@ -17,15 +17,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: FutureBuilder<FirebaseApp>(
-        future: Firebase.initializeApp(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            return AuthWidget();
-          }
-          return SplashWidget();
-        },
-      ),
+      home: AuthWidget(),
       debugShowCheckedModeBanner: false,
     );
   }

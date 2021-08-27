@@ -38,7 +38,7 @@ android {
         disable 'InvalidPackage'
     }
     defaultConfig {
-        applicationId "com.rubykamboj.rapid"
+        applicationId "com.rubykamboj.flutter.rapid"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
